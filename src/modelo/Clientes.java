@@ -18,6 +18,10 @@ public class Clientes {
     private String cli_direccion;
     private String cli_ruc;
 
+    public Clientes(Integer cli_codigo) {
+        this.cli_codigo = cli_codigo;
+    }
+
     public Clientes() {
     }
 
@@ -29,14 +33,6 @@ public class Clientes {
         this.cli_direccion = cli_direccion;
         this.cli_ruc = cli_ruc;
     }
-
-    public Clientes(String cli_nombre, String cli_ruc) {
-        this.cli_nombre = cli_nombre;
-        this.cli_ruc = cli_ruc;
-    }
-    
-
-    
 
     public Integer getCli_codigo() {
         return cli_codigo;
@@ -85,9 +81,6 @@ public class Clientes {
     public void setCli_ruc(String cli_ruc) {
         this.cli_ruc = cli_ruc;
     }
-    
-    
-    
-    
-    
+
+   
 }

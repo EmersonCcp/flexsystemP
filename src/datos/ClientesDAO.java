@@ -56,8 +56,21 @@ public class ClientesDAO implements IDAO_Clientes {
         return null;
     }
 
-    @Override
-    public void insertarCliente(Object objMaterial) {
+    
+    public void insertarCliente(Clientes c) {
+                try {
+            String ssql="INSERT INTO clientes (cli_nombre,cli_ruc,cli_telefono,cli_direccion) VALUES (?,?,?,?,?)";
+            ps = con.prepareStatement(ssql);
+            ps.setString(1, c.getCli_nombre());
+            ps.setString(2, c.getCli_apellido());
+            ps.setString(3, c.getCli_ruc());
+            ps.setString(4, c.getCli_telefono());
+            ps.setString(5, c.getCli_direccion());
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Ingresado con Exito");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
 
     }
 
@@ -109,6 +122,11 @@ public class ClientesDAO implements IDAO_Clientes {
             JOptionPane.showMessageDialog(null, "error en filtrar el nombre");
         }
         return a;
+    }
+
+    @Override
+    public void insertarCliente(Object objMaterial) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
