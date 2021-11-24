@@ -10,22 +10,22 @@ package modelo;
  * @author Gabriel
  */
 public class Clientes {
-    
     private Integer cli_codigo;
     private String cli_nombre;
     private String cli_apellido;
+    private String cli_ruc;
     private String cli_telefono;
     private String cli_direccion;
-    private String cli_ruc;
+    
+    
+    public Clientes() {
+    }
 
     public Clientes(Integer cli_codigo) {
         this.cli_codigo = cli_codigo;
     }
 
-    public Clientes() {
-    }
-
-    public Clientes(Integer cli_codigo, String cli_nombre, String cli_apellido, String cli_telefono, String cli_direccion, String cli_ruc) {
+    public Clientes(Integer cli_codigo, String cli_nombre, String cli_apellido, String cli_ruc, String cli_telefono, String cli_direccion) {
         this.cli_codigo = cli_codigo;
         this.cli_nombre = cli_nombre;
         this.cli_apellido = cli_apellido;
