@@ -25,7 +25,7 @@ public class MaterialesDAO implements IDAO_Materiales {
 
     }
 
-    @Override
+  
     public ArrayList listarMaterial(String condicionM) {
         try {
             SSQL = "Select * from materiales " + condicionM;
@@ -77,7 +77,7 @@ public class MaterialesDAO implements IDAO_Materiales {
 
     }
 
-    @Override
+    
     public void insertarMaterial(Object objMaterial) {
         materialesObj = (Materiales) objMaterial;
         SSQL = "Insert into materiales(ma_nombre,ma_cantidad,ma_precio,ma_fecha_compra,"
@@ -100,7 +100,7 @@ public class MaterialesDAO implements IDAO_Materiales {
 
     }
 
-    @Override
+   
     public void modificarMaterial(Object objMaterial) {
         materialesObj = (Materiales) objMaterial;
         try {
@@ -128,7 +128,7 @@ public class MaterialesDAO implements IDAO_Materiales {
         }
     }
 
-    @Override
+   
     public void eliminarMAterial(Object objMaterial) {
         try {
             materialesObj = (Materiales) objMaterial;
@@ -141,7 +141,7 @@ public class MaterialesDAO implements IDAO_Materiales {
         }
     }
 
-    @Override
+  
     public void FiltrarMaterial(Object objMaterial) {
         filtroMateriales = (FiltroMateriales) objMaterial;
         try {

@@ -23,9 +23,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public FrmPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        ImageIcon imagen= new ImageIcon("src/imagenes/materiales.jpg");
-        Icon icono=new ImageIcon(imagen.getImage().getScaledInstance(lblmateriales.getWidth(), lblmateriales.getHeight(),Image.SCALE_DEFAULT));
-        lblmateriales.setIcon(icono);
+        ImageIcon imma= new ImageIcon("src/imagenes/materiales.jpg");
+        ImageIcon imcli= new ImageIcon("src/imagenes/clientes.jpg");
+        ImageIcon imgas= new ImageIcon("src/imagenes/gastos.jpg");
+      //  ImageIcon imgen= new ImageIcon("src/imagenes/materiales.jpg");
+        Icon icono3=new ImageIcon(imma.getImage().getScaledInstance(lblMateriales.getWidth(), lblMateriales.getHeight(),Image.SCALE_DEFAULT));
+        Icon icono2=new ImageIcon(imcli.getImage().getScaledInstance(lblClientes.getWidth(), lblClientes.getHeight(),Image.SCALE_DEFAULT));
+        Icon icono1=new ImageIcon(imgas.getImage().getScaledInstance(lblGastos.getWidth(), lblGastos.getHeight(),Image.SCALE_DEFAULT));
+        //Icon icono=new ImageIcon(imgen.getImage().getScaledInstance(lblGen.getWidth(), lblGastos.getHeight(),Image.SCALE_DEFAULT));
+        lblMateriales.setIcon(icono3);
+        lblClientes.setIcon(icono2);
+        lblGastos.setIcon(icono1);
         this.repaint();
         
     }
@@ -38,7 +46,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lblmateriales = new javax.swing.JLabel();
+        lblGastos = new javax.swing.JLabel();
+        lblMateriales = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblClientes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pantalla Principal");
@@ -49,12 +61,32 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel1.setText("FlexSystem");
 
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        jLabel2.setText("Materiales");
+        jLabel2.setText("Clientes");
 
-        lblmateriales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/materiales.jpg"))); // NOI18N
-        lblmateriales.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblGastos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/materiales.jpg"))); // NOI18N
+        lblGastos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblmaterialesMouseClicked(evt);
+                lblGastosMouseClicked(evt);
+            }
+        });
+
+        lblMateriales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/materiales.jpg"))); // NOI18N
+        lblMateriales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMaterialesMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabel3.setText("Materiales");
+
+        jLabel4.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabel4.setText("Gastos");
+
+        lblClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/materiales.jpg"))); // NOI18N
+        lblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblClientesMouseClicked(evt);
             }
         });
 
@@ -63,26 +95,61 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(135, 135, 135)
+                .addGap(129, 129, 129)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(330, 330, 330))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(lblmateriales, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(220, 220, 220))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(135, 365, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(330, 330, 330))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(213, 213, 213))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(138, 138, 138))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(75, 75, 75)
+                    .addComponent(lblMateriales, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(609, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(543, Short.MAX_VALUE)
+                    .addComponent(lblClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(141, 141, 141)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addGap(54, 54, 54)
-                .addComponent(lblmateriales, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(274, 274, 274))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(40, 40, 40)
+                        .addComponent(lblGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addGap(36, 36, 36))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(296, 296, 296))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(144, 144, 144)
+                    .addComponent(lblMateriales, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(329, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(151, 151, 151)
+                    .addComponent(lblClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(322, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -105,12 +172,26 @@ public class FrmPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblmaterialesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblmaterialesMouseClicked
+    private void lblGastosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblGastosMouseClicked
+        FrmGastos frmGastos=new FrmGastos();
+        frmGastos.setVisible(true);
+        this.setVisible(false);
+              
+    }//GEN-LAST:event_lblGastosMouseClicked
+
+    private void lblMaterialesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMaterialesMouseClicked
+                                              
         FrmMateriales frmMateriales=new FrmMateriales();
         frmMateriales.setVisible(true);
         this.setVisible(false);
               
-    }//GEN-LAST:event_lblmaterialesMouseClicked
+    }//GEN-LAST:event_lblMaterialesMouseClicked
+
+    private void lblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblClientesMouseClicked
+        FrmClientes frmClientes=new FrmClientes();
+        frmClientes.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_lblClientesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -150,7 +231,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblmateriales;
+    private javax.swing.JLabel lblClientes;
+    private javax.swing.JLabel lblGastos;
+    private javax.swing.JLabel lblMateriales;
     // End of variables declaration//GEN-END:variables
 }
