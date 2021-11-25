@@ -390,14 +390,14 @@ public class FrmGastos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFecha_gastosActionPerformed
 
     private void jmModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmModificarActionPerformed
-       btnGrabar.setText("    Modificar");
+       btnGrabar.setText("Modificar");
         Integer filaNum = tblGastos.getSelectedRow();
         if (filaNum < 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un registro");
         } else {
             DefaultTableModel modelo = (DefaultTableModel) tblGastos.getModel();
             Integer ga_codigo = (Integer) modelo.getValueAt(filaNum, 0);
-            String whereTmp = " WHERE ga_codigo='" + ga_codigo + "'";
+            String whereTmp = " WHERE ga_codigo ='" + ga_codigo + "'";
             gastosLista = gastosControl.listarGastos(whereTmp);
             gastosObj = gastosLista.get(0);
 
